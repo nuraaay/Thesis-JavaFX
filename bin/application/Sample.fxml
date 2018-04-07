@@ -52,7 +52,7 @@
       </ImageView>
       <CheckBox layoutX="456.0" layoutY="241.0" mnemonicParsing="false" onAction="#onCheckBoxSelected" prefHeight="26.0" prefWidth="121.0" text="Remember Me" textFill="#203445" />
       <Button defaultButton="true" graphicTextGap="6.0" layoutX="422.0" layoutY="312.0" mnemonicParsing="false" onAction="#onButtonRegisterClicked" prefHeight="39.0" prefWidth="152.0" style="-fx-background-color: #203445;" text="Register" textFill="#9df441" />
-      <Label layoutX="73.0" layoutY="180.0" prefHeight="39.0" prefWidth="121.0" text="To Example" textFill="#9df441">
+      <Label layoutX="56.0" layoutY="181.0" prefHeight="39.0" prefWidth="172.0" text="To Java Fx Example" textFill="#9df441">
          <font>
             <Font size="20.0" />
          </font>

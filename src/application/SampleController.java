@@ -17,7 +17,7 @@ public class SampleController {
 	 @FXML
 	 private void onButtonLoginClicked(ActionEvent event) {
 	     // Button was clicked, do something...
-		 System.out.println("Button Login clicked");
+		 System.out.println("Button Login clicked. Ich wurde geändert.");
 	 }
 	 
 	 @FXML
