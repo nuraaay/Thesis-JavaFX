@@ -23,7 +23,7 @@ public class SampleController {
 	 @FXML
 	 private void onButtonRegisterClicked(ActionEvent event) {
 	     // Button was clicked, do something...
-		 System.out.println("Button Register clicked");
+		 System.out.println("Button Register clicked. Ich bin QUEEN.");
 	 }
 	 
 	 @FXML
