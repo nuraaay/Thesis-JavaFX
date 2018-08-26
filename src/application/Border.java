@@ -15,7 +15,7 @@ public class Border extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("BorderPane_Darstellung");
-		
+
 		BorderPane myBorderPaneTest = new BorderPane();
 		myBorderPaneTest.setPadding(new Insets(20, 40, 40, 10));
 
@@ -24,7 +24,7 @@ public class Border extends Application {
 		Button center = new Button("Center");
 		Button right = new Button("Right");
 		Button bottom = new Button("Bottom");
-		
+
 		myBorderPaneTest.setTop(top);
 		myBorderPaneTest.setLeft(left);
 		myBorderPaneTest.setCenter(center);
@@ -32,7 +32,7 @@ public class Border extends Application {
 		myBorderPaneTest.setBottom(bottom);
 
 		Scene scene = new Scene(myBorderPaneTest, 200, 150);
-		
+
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

@@ -9,53 +9,50 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-
 public class RadioButtonShowcase extends Application {
- 
-   @Override
-   public void start(Stage stage) {
-	   ToggleGroup  group = new ToggleGroup();
-	   
-       Label status = new Label();
+	@Override
+	public void start(Stage stage) {
+		ToggleGroup gruppe = new ToggleGroup();
+		Label status = new Label();
+		RadioButton links = new RadioButton("links");
+		RadioButton rechts = new RadioButton("rechts");
 
-       RadioButton links = new RadioButton("links");
-       RadioButton rechts = new RadioButton("rechts");
-             
-       links.setToggleGroup(group);
-       links.setSelected(true);
-       rechts.setToggleGroup(group);
- 
-       group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-           @Override
-           public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
-               if (group.getSelectedToggle() != null) {
-                   RadioButton button = (RadioButton) group.getSelectedToggle();
-                   System.out.println("Button: " + button.getText());
-                   status.setText("Du bist " + button.getText());
-               }
-           }
-       });
-       
-       
-       HBox root = new HBox();
-       root.setPadding(new Insets(10));
-       root.setSpacing(5);
-       root.getChildren().addAll(links, rechts, status);
- 
-       Scene scene = new Scene(root, 400, 150);
-       stage.setScene(scene);
-       stage.setTitle("RadioButton_Showcase");
-       scene.setRoot(root);
-       stage.show();
-   }
- 
-   public static void main(String[] args) {
-       launch(args);
-   }
- 
+		links.setToggleGroup(gruppe);
+		rechts.setToggleGroup(gruppe);
+		links.setSelected(true);
+
+		ChangeListener myHandler = createOnChangeListener(gruppe, status);
+		gruppe.selectedToggleProperty().addListener(myHandler);
+
+		HBox layout = new HBox();
+		layout.setPadding(new Insets(10));
+		layout.setSpacing(5);
+		layout.getChildren().addAll(links, rechts, status);
+
+		Scene scene = new Scene(layout, 400, 150);
+		stage.setScene(scene);
+		stage.setTitle("JavaFX-Showcase-RadioButton");
+		scene.setRoot(layout);
+		stage.show();
+	}
+
+	public ChangeListener createOnChangeListener(ToggleGroup gruppe, Label status) {
+		return new ChangeListener<Toggle>() {
+			@Override
+			public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
+				if (gruppe.getSelectedToggle() != null) {
+					RadioButton button = (RadioButton) gruppe.getSelectedToggle();
+					status.setText("Buton " + button.getText() + " ist gewählt ");
+				}
+			}
+		};
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
 }
